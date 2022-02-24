@@ -7,14 +7,14 @@ fun main(args: Array<String>) {
         println("Digite um numero")
         num1 = readLine()!!.toInt()
 
-        if (num1 % 3 == 0) {
+        if (num1 % 3 == 0 && num1 != 0) {
             soma += num1
             cont++
         }
 
     } while (num1 != 0)
 
-    var media = soma / cont
+    var media = soma.toDouble() / cont.toDouble()
 
-    println("a media de todos os numero multiplos de 3 digitados é $media")
+    println("a media de todos os numero multiplos de 3 digitados é ${"%.1f".format(media)}")
 }

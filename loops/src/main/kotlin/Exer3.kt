@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
 
         if (idade in 0..21) {
             menorIdade++
-        } else if(idade >= 50){
+        } else if (idade >= 50) {
             maiorIdade++
         }
 

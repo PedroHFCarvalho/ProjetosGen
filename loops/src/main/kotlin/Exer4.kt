@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
     var contCalm = 0
     var cont = 0
 
-    while (cont <= 150) {
+    while (cont <= 3) { // Repetindo apenas 3 vezes para testes !!!!!
 
         println("Digite sua idade")
         idade = readLine()!!.toInt()
@@ -28,22 +28,22 @@ fun main(args: Array<String>) {
         println("3 - Agressivo")
         comport = readLine()!!.toInt()
 
-        if (comport == 1){
+        if (comport == 1) {
             contCalm++
         }
-        if (sexo == 1 && comport == 2){
+        if (sexo == 1 && comport == 2) {
             contMulNervo++
         }
-        if (sexo == 2 && comport == 3){
+        if (sexo == 2 && comport == 3) {
             contHomAgres++
         }
-        if (sexo == 3 && comport == 1){
+        if (sexo == 3 && comport == 1) {
             contOutCalm++
         }
-        if (idade >= 40 && comport == 2){
+        if (idade >= 40 && comport == 2) {
             cont40Nrvo++
         }
-        if (idade <= 18 && comport == 2){
+        if (idade <= 18 && comport == 2) {
             cont18Calm++
         }
         println("__________________________________")
@@ -57,7 +57,6 @@ fun main(args: Array<String>) {
     println("o número de outros calmos é $contOutCalm")
     println("o número de pessoas nervosas com mais de 40 anos é $cont40Nrvo")
     println("o número de pessoas calmas com menos de 18 anos é $cont18Calm")
-
 
 
 }
