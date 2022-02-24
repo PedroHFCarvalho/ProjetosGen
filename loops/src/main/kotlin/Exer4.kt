@@ -43,7 +43,7 @@ fun main(args: Array<String>) {
         if (idade >= 40 && comport == 2) {
             cont40Nrvo++
         }
-        if (idade <= 18 && comport == 2) {
+        if (idade <= 18 && comport == 1) {
             cont18Calm++
         }
         println("__________________________________")
