@@ -1,12 +1,12 @@
 fun main() {
-    val num = mutableListOf<String>()
+    val listItems = mutableListOf<String>()
     println("Bem-Vindo")
     do {
         menu()
         println("Digite o numero da operação")
-        val valMenu = readLine()!!.toInt()
-        operacao(valMenu, num)
 
+        val menu = readLine()!!.toInt()
+        operacao(menu, listItems)
 
-    } while (valMenu != 5) // repetiçao do programa
+    } while (menu != 5) // repetiçao do programa
 }

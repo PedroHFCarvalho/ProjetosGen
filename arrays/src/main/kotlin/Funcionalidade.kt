@@ -2,11 +2,11 @@ fun menu() { // menu inicial
     println("______________________________")
     println("Esse é o controle de Estoque")
     println("______________________________")
-    println("Digite 1 - Para Adicionar um novo item")
-    println("Digite 2 - Para Atualizar um item")
-    println("Digite 3 - Para Listar todos os itens")
-    println("Digite 4 - Para Remover um item")
-    println("Digite 5 - Para Sair")
+    println("Digite 1 - Adicionar um novo item")
+    println("Digite 2 - Atualizar um item")
+    println("Digite 3 - Listar todos os itens")
+    println("Digite 4 - Remover um item")
+    println("Digite 5 - Sair")
     println("______________________________")
 }
 
@@ -28,16 +28,20 @@ fun operacao(opera: Int, itens: MutableList<String>) { // identifica operaçoes
 
 fun remover(itens: MutableList<String>) { // funçaode remover
     println("Digite o nome do itens que será Removido")
-    var nomeItem = readLine()!!.uppercase()
+    val nomeItem = readLine()!!.uppercase()
 
     if (itens.contains(nomeItem)) {
 
         println("deseja realmente remover esse item? [S/s] ou [N/n]")
-        var yesOrNot = readLine()!!
+        val yesOrNot = readLine()!!
 
         if (yesOrNot.compareTo("s", true) == 0) { // Confirma a remoçao
             itens.remove(nomeItem)
             println("O item foi removido com sucesso")
+            println("Aperte Enter para Continuar")
+            readLine()
+        } else {
+            println("item não foi removido")
             println("Aperte Enter para Continuar")
             readLine()
         }
@@ -61,17 +65,26 @@ fun listar(itens: MutableList<String>) { // funçao de listar
 
 fun atualizar(itens: MutableList<String>) { // funçao de atualizar
     println("Digite o nome do itens que será atualizazdo")
-    var nomeItem = readLine()!!.uppercase()
+    val nomeItem = readLine()!!.uppercase()
     println("Digite o nome novo item")
-    var novoItem = readLine()!!.uppercase()
+    val novoItem = readLine()!!.uppercase()
 
-    if (itens.contains(nomeItem) && novoItem != null) { // valida o item dentro da lista
-        var index = itens.indexOf(nomeItem)
-        itens[index] = novoItem
-        println("O item foi atualizado com sucesso")
-        println("Aperte Enter para Continuar")
-        readLine()
+    if (itens.contains(nomeItem)) { // valida o item dentro da lista
 
+        println("deseja realmente atualizar esse item? [S/s] ou [N/n]")
+        val yesOrNot = readLine()!!
+
+        if (yesOrNot.compareTo("s", true) == 0) { // Confirma a atualizaçao
+            val index = itens.indexOf(nomeItem)
+            itens[index] = novoItem
+            println("O item foi atualizado com sucesso")
+            println("Aperte Enter para Continuar")
+            readLine()
+        } else {
+            println("item não foi atualizado")
+            println("Aperte Enter para Continuar")
+            readLine()
+        }
     } else {
         println("item não identidicado")
         println("Aperte Enter para Continuar")
@@ -81,10 +94,9 @@ fun atualizar(itens: MutableList<String>) { // funçao de atualizar
 
 fun adicionar(itens: MutableList<String>) { // funçaode adicionar
     println("Digite o nome do itens que será adicionado")
-    var nomeItem = readLine()!!.uppercase()
+    val nomeItem = readLine()!!.uppercase()
     itens.add(nomeItem)
     println("O item foi adicionado com sucesso")
     println("Aperte Enter para Continuar")
     readLine()
-
 }
