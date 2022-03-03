@@ -32,7 +32,7 @@ fun remover(itens: MutableList<String>) { // funçaode remover
 
     if (itens.contains(nomeItem)) {
 
-        println("deseja realmente remover esse item? [S/s] ou [N/n]")
+        println("deseja realmente remover $nomeItem? [S/s] ou [N/n]")
         val yesOrNot = readLine()!!
 
         if (yesOrNot.compareTo("s", true) == 0) { // Confirma a remoçao
@@ -53,14 +53,20 @@ fun remover(itens: MutableList<String>) { // funçaode remover
 }
 
 fun listar(itens: MutableList<String>) { // funçao de listar
-    println("_________________________________")
-    println("Todos os itens abaixo: ")
-    itens.forEach {
-        println(it)
+    if (itens.isNotEmpty()) {
+        println("_________________________________")
+        println("Todos os itens abaixo: ")
+        itens.forEach {
+            println(it)
+        }
+        println("_________________________________")
+        println("Aperte Enter para Continuar")
+        readLine()
+    } else {
+        println("Lista esta vazia")
+        println("Aperte Enter para Continuar")
+        readLine()
     }
-    println("_________________________________")
-    println("Aperte Enter para Continuar")
-    readLine()
 }
 
 fun atualizar(itens: MutableList<String>) { // funçao de atualizar
@@ -69,9 +75,9 @@ fun atualizar(itens: MutableList<String>) { // funçao de atualizar
     println("Digite o nome novo item")
     val novoItem = readLine()!!.uppercase()
 
-    if (itens.contains(nomeItem)) { // valida o item dentro da lista
+    if (itens.contains(nomeItem) && novoItem.isNotEmpty()) { // valida o item dentro da lista
 
-        println("deseja realmente atualizar esse item? [S/s] ou [N/n]")
+        println("deseja realmente atualizar $nomeItem para $novoItem? [S/s] ou [N/n]")
         val yesOrNot = readLine()!!
 
         if (yesOrNot.compareTo("s", true) == 0) { // Confirma a atualizaçao
@@ -96,7 +102,7 @@ fun adicionar(itens: MutableList<String>) { // funçaode adicionar
     println("Digite o nome do itens que será adicionado")
     val nomeItem = readLine()!!.uppercase()
     itens.add(nomeItem)
-    println("O item foi adicionado com sucesso")
+    println("O item de nome $nomeItem foi adicionado com sucesso")
     println("Aperte Enter para Continuar")
     readLine()
 }
