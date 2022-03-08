@@ -29,22 +29,22 @@ class Cliente(private var nome: String) {
         when (opera) {
             1 -> {
                 addLista()
-                println("Aperte Enter para Continuar")
+                println("Aperte ENTER para Continuar")
                 readLine()
             } // Chama funçao de adicionar
             2 -> {
                 listLista()
-                println("Aperte Enter para Continuar")
+                println("Aperte ENTER para Continuar")
                 readLine()
             } // Chama funçao de listar
             3 -> {
                 removeLista()
-                println("Aperte Enter para Continuar")
+                println("Aperte ENTER para Continuar")
                 readLine()
             } // Chama funçao de remover
             4 -> {
                 println(toString())
-                println("Aperte Enter para Continuar")
+                println("Aperte ENTER para Continuar")
                 readLine()
             }   // chama funçao de visualizar dados pessoais
             5 -> {
@@ -52,7 +52,7 @@ class Cliente(private var nome: String) {
             } // msg de programa finalizado
             else -> { // msg de erro
                 println("Nao foi possivel identificar a operaçao")
-                println("Aperte Enter para Continuar")
+                println("Aperte ENTER para Continuar")
                 readLine()
             }
         }
